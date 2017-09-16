@@ -1,0 +1,26 @@
+{
+  "name": "unist-find-node",
+  "version": "1.0.0",
+  "description": "Find node in MDAST by Position",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "keywords": [
+    "unist",
+    "node",
+    "position",
+    "source",
+    "mdast"
+  ],
+  "author": "Jinxuan Zhu <zhujinxuan@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "remark-parse": "^4.0.0",
+    "to-vfile": "^2.1.2",
+    "unified": "^6.1.5",
+    "unist-util-inspect": "^4.1.1",
+    "vfile": "^2.2.0"
+  }
+}
