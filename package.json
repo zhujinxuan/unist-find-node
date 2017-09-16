@@ -1,10 +1,14 @@
 {
   "name": "unist-find-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find node in MDAST by Position",
   "main": "index.js",
   "scripts": {
     "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zhujinxuan/unist-find-node.git"
   },
   "keywords": [
     "unist",
