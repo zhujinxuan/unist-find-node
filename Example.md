@@ -30,7 +30,8 @@ let assert = require("assert")
 
 ----
 ## List, unordered
-* [a][alpha]
+* [a][alpha] paragraph text
+  whether a nested paragraph
 * [unist](https://github.com/syntax-tree/unist)
   1. cat
   2. cute

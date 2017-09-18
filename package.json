@@ -1,6 +1,6 @@
 {
   "name": "unist-find-node",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Find node in MDAST by Position",
   "main": "index.js",
   "scripts": {

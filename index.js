@@ -55,13 +55,31 @@ function compose(returnable) {
 const defaultReturnable = [
   (node, defaultNode) =>
     node.type === "paragraph" ? defaultNode.type === "root" : undefined,
-  (node, defaultNode) => (node.type === "text" ? false : undefined),
+  node => (node.type === "root" ? null : undefined),
   node => (node.type === "tableCell" ? true : undefined),
   node => (node.type === "heading" ? true : undefined),
   node => (node.type === "list" ? null : undefined),
   node => (node.type === "table" ? null : undefined),
   (node, defaultNode) =>
-    defaultNode && defaultNode.type === "listItem" ? false : undefined
+    defaultNode && defaultNode.type === "listItem" ? false : undefined,
+  (node, defaultNode) => {
+    if (
+      [
+        "text",
+        "inlineCode",
+        "emphasis",
+        "strong",
+        "delete",
+        "link",
+        "image",
+        "linkReference",
+        "imageReference"
+      ].indexOf(node.type) > -1
+    ) {
+      return false;
+    }
+    return undefined;
+  }
 ];
 
 module.exports = function(node, position, returnable = []) {

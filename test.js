@@ -32,7 +32,7 @@ describe("List and ListItem", () => {
     assert(child.type === "listItem" && child.checked === true);
     child = findNode(tree, { line: 34, column: 5 });
     assert(child.type === "listItem");
-    child = findNode(tree, { line: 35, column: 5 });
+    child = findNode(tree, { line: 36, column: 5 });
     assert(child.type === "listItem");
   });
 
@@ -40,7 +40,7 @@ describe("List and ListItem", () => {
     let child = findNode(tree, { line: 12, column: 100 });
     assert(child.type === "list" && child.ordered === true);
     // console.log(inspect(tree));
-    child = findNode(tree, { line: 35, column: 100 });
+    child = findNode(tree, { line: 36, column: 100 });
     assert(child.type === "list");
   });
 });
