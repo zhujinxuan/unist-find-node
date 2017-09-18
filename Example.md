@@ -32,5 +32,8 @@ let assert = require("assert")
 ## List, unordered
 * [a][alpha]
 * [unist](https://github.com/syntax-tree/unist)
+  1. cat
+  2. cute
 
 [alpha]: http://example.com
+

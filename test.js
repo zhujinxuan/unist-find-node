@@ -1,10 +1,11 @@
 "use strict";
 
-// let inspect = require("unist-util-inspect");
 let vfile = require("to-vfile");
 let unified = require("unified");
 let parse = require("remark-parse");
 let assert = require("assert");
+// let inspect = require("unist-util-inspect");
+
 let findNode = require("./index.js");
 
 let file = vfile.readSync("example.md");
@@ -27,12 +28,19 @@ describe("List and ListItem", () => {
   it("ListItem", () => {
     let child = findNode(tree, { line: 11, column: 2 });
     assert(child.type === "listItem");
-    child = findNode(tree, { line: 12, column: 2 });
+    child = findNode(tree, { line: 12, column: 5 });
     assert(child.type === "listItem" && child.checked === true);
+    child = findNode(tree, { line: 34, column: 5 });
+    assert(child.type === "listItem");
+    child = findNode(tree, { line: 35, column: 5 });
+    assert(child.type === "listItem");
   });
 
   it("list", () => {
     let child = findNode(tree, { line: 12, column: 100 });
+    assert(child.type === "list" && child.ordered === true);
+    // console.log(inspect(tree));
+    child = findNode(tree, { line: 35, column: 100 });
     assert(child.type === "list");
   });
 });
@@ -52,4 +60,4 @@ describe("table", () => {
   });
 });
 
-console.log("NicoNicoNi~");
+// console.log(inspect(tree));
